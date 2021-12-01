@@ -37,21 +37,20 @@ function establishConnection() {
     socket1.connect({ port: PORT2 }, localhost, () => {
         printConnec();
     });
-    socket1.on("data", (data) => {
-        console.log(data);
-    });
 }
 
 // funct to request retrieval of data from teammates microservice
 function getData(data) {
     var passage;
     const readStream = readline.createInterface({ input: data });
-    readStream.on('para', (para) => {
-        passage = para;
-        socket1.write(`${para}\n`);
+    readStream.on('connection', (socket1) => {
+        socket1.on(readstream, (para) => {
+            passage = para;
+        });
     });
     readStream.on('close', () => {
         socket1.end();
+        readStream.end();
     });
     return passage;
 }
