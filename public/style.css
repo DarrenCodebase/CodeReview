@@ -1,0 +1,51 @@
+.center {
+    margin-left: auto;
+    margin-right:auto;
+}
+  
+.center-button {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background-color:rgb(250, 217, 175);
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+#portLink {
+    display: block;
+    text-align: center;
+}
+
+table { 
+    border: 3px solid rgb(250, 153, 89);
+}
+  
+tbody {
+    background-color:rgb(250, 217, 175);
+}
+  
+td { 
+    text-align: center;
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    border: 2px solid rgb(250, 153, 89);
+}
+  
