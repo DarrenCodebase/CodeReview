@@ -8,12 +8,13 @@ async function getData(url, path) {
     return response.json();
 }
 
+// socket communication happens through teammates server
 const server = net.createServer((socket) => {
     console.log("\nSocket address: " + socket.remoteAddress + ", and PORT: " + socket.remotePort);
     socket.on("data", (buffer) => {
         console.log("\nRequest accepted");
         const res = getData(buffer.url, buffer.path); 
-        socket.write(`${JSON.stringify(res).toString("utf-8")}\n`);
+        socket.emit(buffer, `${JSON.stringify(res).toString("utf-8")}\n`);
     });
     socket.on("end", () => {
         console.log("\nConnection closed" + socket.remoteAddress + ", and PORT: " + socket.remotePort);
@@ -21,4 +22,6 @@ const server = net.createServer((socket) => {
 });
 
 server.maxConnections = 10;
-server.listen(PORT);
+server.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}...`);
+});
