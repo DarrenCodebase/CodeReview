@@ -181,7 +181,7 @@ function wyVolcs(requestVolc) {
     return fileVolc;
 }
 
-// funct to find out which state the requested volcano is in
+// funct to find which of the 12 states the requested volcano is in
 function findVolc(request) {
     if (request.state === "al") { return alVolcs(request) }
     else if (request.state === "ca") { return caVolcs(request) }
