@@ -1,0 +1,35 @@
+<!--AK State-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Into The Crater</title>
+    <link rel="stylesheet" href="stylePages.css">
+  </head>
+  <body>
+    <h1>Select Your Volcano</h1>
+    <p>
+      You will be offered a selection of three volcanoes. Choose any one.
+    </p>
+    <br><br/>
+    <form action="/displayResults" method="POST">
+        <label for="volcs"> Select a volcano from the state of Alaska: </label>
+        <select name="volcano" id="volcs">
+          <option value='{"name": "Mt Bona", "state": "ak", "url": "https://en.wikipedia.org/wiki/Mount_Bona"
+          , "jspath": "#mw-content-text > div.mw-parser-output > p:nth-child(3)"}'>Mt. Bona</option>
+          <option value='{"name": "Mt Pavlof", "state": "ak", "url": "https://en.wikipedia.org/wiki/Mount_Pavlof"
+          , "jspath": "#mw-content-text > div.mw-parser-output > p:nth-child(4)"}'>Mt. Pavlof</option>
+          <option value='{"name": "Novarupta", "state": "ak", "url": "https://en.wikipedia.org/wiki/Novarupta"
+          , "jspath": "#mw-content-text > div.mw-parser-output > p:nth-child(5)"}'>Novarupta</option>
+        </select>
+        <br><br>
+        <script></script>
+        <br><br>
+        Once you're satisfied with your pick, click 'Get Results' 
+        to find out about the volcano you selected.
+        <br/> <br/>
+        <button type="submit">Get Results</button>
+    </form>
+  </body>
+</html>
