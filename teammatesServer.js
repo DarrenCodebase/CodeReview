@@ -14,7 +14,7 @@ const server = net.createServer((socket) => {
     socket.on("data", (buffer) => {
         console.log("\nRequest accepted");
         const res = getData(buffer.url, buffer.path); 
-        socket.emit(buffer, `${JSON.stringify(res).toString("utf-8")}\n`);
+        socket.emit(buffer, JSON.stringify(res).toString("utf-8"));
     });
     socket.on("end", () => {
         console.log("\nConnection closed" + socket.remoteAddress + ", and PORT: " + socket.remotePort);
