@@ -66,11 +66,11 @@ app.post('/displayResults', (req, res, next) => {
 });
 
 // find requested volcano from the state of Alaska 
-function alVolcs(requestVolc) {
+function akVolcs(requestVolc) {
     var fileVolc;
-    if (requestVolc.name === "Mt Bona") { fileVolc = '/alMtBona.html'; } 
-    else if (requestVolc.name === "Mt Pavlof") { fileVolc = '/alMtPavlof.html'; } 
-    else if (requestVolc.name === "Novarupta") { fileVolc = '/alNovarupta.html'; } 
+    if (requestVolc.name === "Mt Bona") { fileVolc = '/akMtBona.html'; } 
+    else if (requestVolc.name === "Mt Pavlof") { fileVolc = '/akMtPavlof.html'; } 
+    else if (requestVolc.name === "Novarupta") { fileVolc = '/akNovarupta.html'; } 
     else { console.log('An Error occured'); }
     return fileVolc;
 }
@@ -182,7 +182,7 @@ function wyVolcs(requestVolc) {
 
 // funct to find which of the 12 states the requested volcano is in
 function findVolc(request) {
-    if (request.state === "al") { return alVolcs(request) }
+    if (request.state === "ak") { return alVolcs(request) }
     else if (request.state === "ca") { return caVolcs(request) }
     else if (request.state === "or") { return orVolcs(request) }
     else if (request.state === "wa") { return waVolcs(request) }
